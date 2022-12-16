@@ -2,17 +2,20 @@
     "name": "blank",
     "author": "D",
     "private": true,
+    "engines": {
+        "npm": ">=8.0.0",
+        "node": ">=16.0.0"
+    },
     "scripts": {
         "dev": "npm run server",
         "prod": "npm run build && npm run server:prod",
         "build": "vite build",
         "server": "ts-node ./server",
         "server:prod": "cross-env NODE_ENV=production ts-node ./server",
-        "lint:js": "eslint ./ --ext .ts,.vue",
         "prettier:check": "prettier --check \"./**/*.{js,ts,vue}\"",
         "prettier:write": "prettier --write \"./**/*.{js,ts,vue}\"",
-        "typescript:check": "tsc --noEmit -p tsconfig.json",
-        "vue-typescript:check": "vue-tsc -p tsconfig.json",
+        "typescript-check": "tsc --noEmit -p tsconfig.json",
+        "vue-typescript-check": "vue-tsc -p tsconfig.json",
         "lint": "eslint \"./**/*.{js,vue,ts}\" --fix --cache",
         "lint:pipeline": "eslint \"./**/*.{js,vue,ts}\" --format=json -o eslint.out"
     },
@@ -42,6 +45,7 @@
         "eslint-plugin-prettier": "^4.2.1",
         "eslint-plugin-vue": "^9.8.0",
         "prettier": "2.8.1",
-        "vue-eslint-parser": "^9.1.0"
+        "vue-eslint-parser": "^9.1.0",
+        "vue-tsc": "^1.0.13"
     }
 }
