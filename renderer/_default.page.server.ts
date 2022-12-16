@@ -1,7 +1,7 @@
 import {renderToString} from '@vue/server-renderer';
 import {escapeInject, dangerouslySkipEscape} from 'vite-plugin-ssr';
 import {createApp} from './app';
-import {faviconSVG as icon} from 'services/logo';
+import {faviconSVG as favicon} from 'services/logo';
 import type {PageContextServer} from 'types/vite-ssr';
 import {appDescription, appTitle} from 'services/constants';
 
@@ -22,7 +22,7 @@ const render = async (pageContext: PageContextServer) => {
     <html lang="en">
       <head>
         <meta charset="UTF-8" />
-        <link rel="icon" href="${icon[1]}" />
+        <link rel="icon" href="${favicon[1]}" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="${desc}" />
         <title>${title}</title>
